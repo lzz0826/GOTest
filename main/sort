@@ -1,0 +1,32 @@
+--------排序函数：
+
+sort.Slice(slice interface{}, less func(i, j int) bool)
+根据给定的 less 函数对切片进行排序。less 函数用于定义元素的排序规则。
+
+sort.SliceStable(slice interface{}, less func(i, j int) bool)
+类似于 sort.Slice，但保留相等元素的原始顺序。
+
+sort.Ints(a []int)
+对整数切片进行升序排序。
+
+sort.Float64s(a []float64)
+对 float64 切片进行升序排序。
+
+sort.Strings(a []string)
+对字符串切片进行升序排序。
+
+sort.Search(n int, f func(int) bool) int
+ 在 [0, n) 范围内执行二分搜索，找到第一个满足条件 f(i) == true 的 i，并返回 i。如果没有找到满足条件的 i，则返回 n。
+
+--------排序接口：
+sort.Interface
+定义了排序算法所需的基本方法。如果类型实现了这些方法，就可以使用 sort 包中的函数进行排序。
+
+type Interface interface {
+    Len() int           // 返回集合中的元素个数
+    Less(i, j int) bool // 返回第 i 个元素是否应排在第 j 个元素之前
+    Swap(i, j int)      // 交换第 i 个和第 j 个元素的位置
+}
+
+sort.Reverse
+用于逆转 sort.Interface 接口的排序顺序。例如：sort.Sort(sort.Reverse(data)) 将 data 以降序排序。

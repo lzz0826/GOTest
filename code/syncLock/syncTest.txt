@@ -1,0 +1,22 @@
+package syncLock
+
+//syncLock.Mutex：
+//是一个互斥锁，用于在代码块上加锁和解锁，以保护共享资源不被多个 goroutine 同时访问。
+//一次只能有一个 goroutine 持有 Mutex 的锁，其他 goroutine 在获取锁之前会被阻塞。
+//Mutex 使用较为简单，但如果有大量的读操作和少量的写操作时，性能可能较低。
+
+//syncLock.RWMutex：
+//是一个读写互斥锁，比 Mutex 更加灵活。它允许多个 goroutine 并发地读取共享资源，但在有写操作时需要排他性访问。
+//当有 goroutine 持有写锁时，其他所有 goroutine 都被阻塞，包括读操作。
+//但当有 goroutine 持有读锁时，其他 goroutine 也可以继续持有读锁，从而实现了并发读取。
+
+//syncLock.WaitGroup：是一个等待组，用于等待一组 goroutine 执行完毕。WaitGroup 内部维护一个计数器，
+//可以通过 Add() 方法增加计数器的值，通过 Done() 方法减少计数器的值，以及通过 Wait() 方法等待计数器归零。
+//主 goroutine 可以通过 Wait() 方法阻塞直到计数器归零，从而等待其他 goroutine 执行完毕。
+
+//syncLock.Once：是一个执行一次的对象，用于确保某个操作仅在第一次调用时执行一次，而后的调用将不再执行。
+//Once 类型的对象保证了在多线程环境下对某个操作只执行一次。它有一个 Do() 方法，该方法接受一个函数作为参数，保证该函数只会被调用一次。
+
+//syncLock.Cond：是一个条件变量，用于在多个 goroutine 之间同步操作。
+//条件变量允许一个或多个 goroutine 等待或通知事件的发生。使用条件变量时，goroutine
+//可以等待某个条件的发生，或者在条件满足时通知其他等待的 goroutine。条件变量必须与互斥锁一起使用，以保护共享变量的访问。

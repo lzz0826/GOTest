@@ -1,0 +1,31 @@
+
+strings 包是 Go 语言标准库中的一个包，提供了许多用于操作字符串的函数。以下是 strings 包中一些常用的方法：
+
+----字符串查找和替换：
+Contains(s, substr string) bool：判断字符串 s 中是否包含子串 substr。
+Index(s, substr string) int：返回字符串 s 中子串 substr 的第一个出现位置，如果未找到则返回 -1。
+Replace(s, old, new string, n int) string：将字符串 s 中的前 n 个 old 子串替换为 new 子串。
+ReplaceAll(s, old, new string) string：将字符串 s 中的所有 old 子串替换为 new 子串。
+Count(s, substr string) int：返回字符串 s 中子串 substr 的非重叠个数。
+
+
+----字符串分割和连接：
+Split(s, sep string) []string：根据分隔符 sep 对字符串 s 进行分割，返回一个字符串切片。
+Join(a []string, sep string) string：使用分隔符 sep 将字符串切片 a 中的所有字符串连接成一个字符串。
+
+
+字符串大小写转换：
+ToLower(s string) string：将字符串 s 中的所有字母转换为小写。
+ToUpper(s string) string：将字符串 s 中的所有字母转换为大写。
+
+
+----字符串修剪：
+Trim(s string, cutset string) string：删除字符串 s 前后所有出现在 cutset 中的 Unicode 码点。
+TrimSpace(s string) string：删除字符串 s 前后的所有空白字符。
+
+
+----其他常用方法：
+Repeat(s string, count int) string：返回重复 count 次的字符串 s。
+Fields(s string) []string：将字符串 s 按照空白字符分割，并返回一个字符串切片。
+HasPrefix(s, prefix string) bool：判断字符串 s 是否以 prefix 开头。
+HasSuffix(s, suffix string) bool：判断字符串 s 是否以 suffix 结尾。

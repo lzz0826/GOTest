@@ -1,0 +1,42 @@
+
+
+----time 包提供了许多函数来处理时间相关的操作。以下是一些常用的 time 包函数：
+
+After: 创建一个定时器，在指定的时间段后向返回的通道发送当前时间。
+func After(d Duration) <-chan Time
+
+Now: 返回当前时间。
+func Now() Time
+
+Sleep: 暂停当前 goroutine 执行指定的时间段。
+func Sleep(d Duration)
+
+Tick: 创建一个定时器，并周期性地向返回的通道发送当前时间，时间间隔由参数 d 指定。
+func Tick(d Duration) <-chan Time
+
+Since: 返回指定时间点到当前时间的时间段。
+func Since(t Time) Duration
+
+Until: 返回当前时间到指定时间点的时间段。
+func Until(t Time) Duration
+
+Parse: 将字符串解析为时间。
+func Parse(layout, value string) (Time, error)
+
+Format: 格式化时间为字符串。
+func (t Time) Format(layout string) string
+
+AfterFunc: 在指定的时间段后执行一个函数。
+func AfterFunc(d Duration, f func()) *Timer
+
+NewTimer: 创建一个新的定时器。
+func NewTimer(d Duration) *Timer
+
+NewTicker: 创建一个新的 Ticker，它会以指定的时间间隔周期性地向返回的通道发送当前时间。
+func NewTicker(d Duration) *Ticker
+
+LoadLocation: 根据时区名加载时区。
+func LoadLocation(name string) (*Location, error)
+
+FixedZone: 创建一个固定偏移量的时区。
+func FixedZone(name string, offset int) *Location

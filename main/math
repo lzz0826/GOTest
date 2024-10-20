@@ -1,0 +1,20 @@
+常量：
+E: 自然对数的底数 e（约等于2.71828）
+Pi: 圆周率 π（约等于3.14159）
+
+函数：
+Abs(x float64) float64: 返回 x 的绝对值。
+Sqrt(x float64) float64: 返回 x 的平方根。
+Pow(x, y float64) float64: 返回 x 的 y 次幂。
+Log(x float64) float64: 返回 x 的自然对数。
+Log10(x float64) float64: 返回 x 的以 10 为底的对数。
+Exp(x float64) float64: 返回 e 的 x 次幂。
+Sin(x float64) float64: 返回 x 的正弦值。
+Cos(x float64) float64: 返回 x 的余弦值。
+Tan(x float64) float64: 返回 x 的正切值。
+Asin(x float64) float64: 返回 x 的反正弦值。
+Acos(x float64) float64: 返回 x 的反余弦值。
+Atan(x float64) float64: 返回 x 的反正切值。
+Floor(x float64) float64: 返回不大于 x 的最大整数值，向下取整。
+Ceil(x float64) float64: 返回不小于 x 的最小整数值，向上取整。
+Round(x float64) float64: 返回最接近 x 的整数，其中 0.5 向上取整。
